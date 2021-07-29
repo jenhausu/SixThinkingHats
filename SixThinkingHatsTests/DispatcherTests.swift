@@ -37,6 +37,12 @@ class DispatcherTests: XCTestCase {
         }
     }
     
+    func testDispatcher_dispatch12User_success() {
+        dispatchTest(userCount: 12) { countArray in
+            XCTAssertEqual(countArray[1], 6)
+        }
+    }
+    
     func testDispatcher_dispatch7User_success() {
         dispatchTest(userCount: 7) { countArray in
             XCTAssertEqual(countArray[0], 5)
@@ -48,21 +54,6 @@ class DispatcherTests: XCTestCase {
         dispatchTest(userCount: 8) { countArray in
             XCTAssertEqual(countArray[0], 4)
             XCTAssertEqual(countArray[1], 2)
-        }
-    }
-    
-    func testDispatcher_dispatch11User_success() {
-        dispatchTest(userCount: 11) { countArray in
-            XCTAssertEqual(countArray[0], 1)
-            XCTAssertEqual(countArray[1], 5)
-        }
-    }
-    
-    func testDispatcher_dispatch13User_success() {
-        dispatchTest(userCount: 13) { countArray in
-            XCTAssertEqual(countArray[0], 0)
-            XCTAssertEqual(countArray[1], 5)
-            XCTAssertEqual(countArray[2], 1)
         }
     }
     
