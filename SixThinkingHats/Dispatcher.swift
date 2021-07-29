@@ -33,13 +33,12 @@ class Dispatcher {
     }
     
     func dispatch() {
-        var sixHats: [Hat] = [.black, .white, .red, .yellow, .blue, .green]
-        
         var notDispatchedHats: [Hat] = []
         for _ in 0..<(participants.count / 6) {
-            notDispatchedHats += sixHats
+            notDispatchedHats += Hat.allCases
         }
         
+        var sixHats = Hat.allCases
         for _ in 0..<(participants.count % 6) {
             let index = Int.random(in: 0..<sixHats.count)
             notDispatchedHats.append(sixHats[index])
