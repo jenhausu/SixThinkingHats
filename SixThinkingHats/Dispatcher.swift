@@ -9,7 +9,7 @@ import Foundation
 
 class Participant {
     let name: String
-    let hats: [Hat] = []
+    var hats: [Hat] = []
     
     var currentHat: Hat? {
         hats.last
@@ -30,6 +30,17 @@ class Dispatcher {
     
     func removeAllParticipants() {
         participants.removeAll()
+    }
+    
+    func dispatch() {
+        var notDispatchedHats = Hat.allCases
+        
+        for user in participants {
+            let index = Int.random(in: 0...notDispatchedHats.count - 1)
+            let hat = notDispatchedHats[index]
+            user.hats.append(hat)
+            notDispatchedHats.remove(at: index)
+        }
     }
     
 }

@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum Hat {
+enum Hat: Int, CaseIterable {
     case white
     case red
     case black
     case yellow
-    case greed
+    case green
     case blue
 }
