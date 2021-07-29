@@ -25,35 +25,56 @@ class DispatcherTests: XCTestCase {
         XCTAssertEqual(sut.participants.count, 0)
     }
     
-    func testDispatcher_dispatch5User_success() {
+    func testDispatcher_lessThan6_success() {
         dispatchTest(userCount: 5) { countArray in
             XCTAssertEqual(countArray[0], 5)
         }
     }
     
-    func testDispatcher_dispatch6User_success() {
+    func testDispatcher_dividable6_success() {
         dispatchTest(userCount: 6) { countArray in
             XCTAssertEqual(countArray[0], 6)
         }
     }
     
-    func testDispatcher_dispatch12User_success() {
+    func testDispatcher_dividable12_success() {
         dispatchTest(userCount: 12) { countArray in
             XCTAssertEqual(countArray[1], 6)
         }
     }
     
-    func testDispatcher_dispatch7User_success() {
+    func testDispatcher_remainder1_success() {
         dispatchTest(userCount: 7) { countArray in
             XCTAssertEqual(countArray[0], 5)
             XCTAssertEqual(countArray[1], 1)
         }
     }
     
-    func testDispatcher_dispatch8User_success() {
+    func testDispatcher_remainder2_success() {
         dispatchTest(userCount: 8) { countArray in
             XCTAssertEqual(countArray[0], 4)
             XCTAssertEqual(countArray[1], 2)
+        }
+    }
+    
+    func testDispatcher_remainder3_success() {
+        dispatchTest(userCount: 9) { countArray in
+            XCTAssertEqual(countArray[0], 3)
+            XCTAssertEqual(countArray[1], 3)
+        }
+    }
+    
+    func testDispatcher_remainder4_success() {
+        dispatchTest(userCount: 10) { countArray in
+            XCTAssertEqual(countArray[0], 2)
+            XCTAssertEqual(countArray[1], 4)
+        }
+    }
+    
+    func testDispatcher_remainder5_success() {
+        dispatchTest(userCount: 11) { countArray in
+            XCTAssertEqual(countArray[0], 1)
+            XCTAssertEqual(countArray[1], 5)
         }
     }
     
