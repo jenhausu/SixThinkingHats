@@ -11,7 +11,7 @@
 		65DBCD7226B2D84E00B79F6A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DBCD7126B2D84E00B79F6A /* ContentView.swift */; };
 		65DBCD7426B2D85000B79F6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65DBCD7326B2D85000B79F6A /* Assets.xcassets */; };
 		65DBCD7726B2D85000B79F6A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65DBCD7626B2D85000B79F6A /* Preview Assets.xcassets */; };
-		65DBCD8226B2D85000B79F6A /* SixThinkingHatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DBCD8126B2D85000B79F6A /* SixThinkingHatsTests.swift */; };
+		65DBCD8226B2D85000B79F6A /* DispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DBCD8126B2D85000B79F6A /* DispatcherTests.swift */; };
 		65DBCD8D26B2D85000B79F6A /* SixThinkingHatsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DBCD8C26B2D85000B79F6A /* SixThinkingHatsUITests.swift */; };
 		65DBCD9B26B2D85900B79F6A /* Hat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DBCD9A26B2D85900B79F6A /* Hat.swift */; };
 		65DBCD9D26B2D92E00B79F6A /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DBCD9C26B2D92E00B79F6A /* Dispatcher.swift */; };
@@ -42,7 +42,7 @@
 		65DBCD7626B2D85000B79F6A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		65DBCD7826B2D85000B79F6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65DBCD7D26B2D85000B79F6A /* SixThinkingHatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SixThinkingHatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		65DBCD8126B2D85000B79F6A /* SixThinkingHatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixThinkingHatsTests.swift; sourceTree = "<group>"; };
+		65DBCD8126B2D85000B79F6A /* DispatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatcherTests.swift; sourceTree = "<group>"; };
 		65DBCD8326B2D85000B79F6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65DBCD8826B2D85000B79F6A /* SixThinkingHatsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SixThinkingHatsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65DBCD8C26B2D85000B79F6A /* SixThinkingHatsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixThinkingHatsUITests.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 		65DBCD8026B2D85000B79F6A /* SixThinkingHatsTests */ = {
 			isa = PBXGroup;
 			children = (
-				65DBCD8126B2D85000B79F6A /* SixThinkingHatsTests.swift */,
+				65DBCD8126B2D85000B79F6A /* DispatcherTests.swift */,
 				65DBCD8326B2D85000B79F6A /* Info.plist */,
 			);
 			path = SixThinkingHatsTests;
@@ -276,7 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65DBCD8226B2D85000B79F6A /* SixThinkingHatsTests.swift in Sources */,
+				65DBCD8226B2D85000B79F6A /* DispatcherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
