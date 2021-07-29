@@ -12,20 +12,12 @@
 		65DBCD7426B2D85000B79F6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65DBCD7326B2D85000B79F6A /* Assets.xcassets */; };
 		65DBCD7726B2D85000B79F6A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65DBCD7626B2D85000B79F6A /* Preview Assets.xcassets */; };
 		65DBCD8226B2D85000B79F6A /* DispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DBCD8126B2D85000B79F6A /* DispatcherTests.swift */; };
-		65DBCD8D26B2D85000B79F6A /* SixThinkingHatsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DBCD8C26B2D85000B79F6A /* SixThinkingHatsUITests.swift */; };
 		65DBCD9B26B2D85900B79F6A /* Hat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DBCD9A26B2D85900B79F6A /* Hat.swift */; };
 		65DBCD9D26B2D92E00B79F6A /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DBCD9C26B2D92E00B79F6A /* Dispatcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		65DBCD7E26B2D85000B79F6A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 65DBCD6426B2D84E00B79F6A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 65DBCD6B26B2D84E00B79F6A;
-			remoteInfo = SixThinkingHats;
-		};
-		65DBCD8926B2D85000B79F6A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 65DBCD6426B2D84E00B79F6A /* Project object */;
 			proxyType = 1;
@@ -44,9 +36,6 @@
 		65DBCD7D26B2D85000B79F6A /* SixThinkingHatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SixThinkingHatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65DBCD8126B2D85000B79F6A /* DispatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatcherTests.swift; sourceTree = "<group>"; };
 		65DBCD8326B2D85000B79F6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65DBCD8826B2D85000B79F6A /* SixThinkingHatsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SixThinkingHatsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		65DBCD8C26B2D85000B79F6A /* SixThinkingHatsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixThinkingHatsUITests.swift; sourceTree = "<group>"; };
-		65DBCD8E26B2D85000B79F6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65DBCD9A26B2D85900B79F6A /* Hat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hat.swift; sourceTree = "<group>"; };
 		65DBCD9C26B2D92E00B79F6A /* Dispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,13 +55,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		65DBCD8526B2D85000B79F6A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -81,7 +63,6 @@
 			children = (
 				65DBCD6E26B2D84E00B79F6A /* SixThinkingHats */,
 				65DBCD8026B2D85000B79F6A /* SixThinkingHatsTests */,
-				65DBCD8B26B2D85000B79F6A /* SixThinkingHatsUITests */,
 				65DBCD6D26B2D84E00B79F6A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,7 +72,6 @@
 			children = (
 				65DBCD6C26B2D84E00B79F6A /* SixThinkingHats.app */,
 				65DBCD7D26B2D85000B79F6A /* SixThinkingHatsTests.xctest */,
-				65DBCD8826B2D85000B79F6A /* SixThinkingHatsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,15 +105,6 @@
 				65DBCD8326B2D85000B79F6A /* Info.plist */,
 			);
 			path = SixThinkingHatsTests;
-			sourceTree = "<group>";
-		};
-		65DBCD8B26B2D85000B79F6A /* SixThinkingHatsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				65DBCD8C26B2D85000B79F6A /* SixThinkingHatsUITests.swift */,
-				65DBCD8E26B2D85000B79F6A /* Info.plist */,
-			);
-			path = SixThinkingHatsUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,24 +145,6 @@
 			productReference = 65DBCD7D26B2D85000B79F6A /* SixThinkingHatsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		65DBCD8726B2D85000B79F6A /* SixThinkingHatsUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 65DBCD9726B2D85000B79F6A /* Build configuration list for PBXNativeTarget "SixThinkingHatsUITests" */;
-			buildPhases = (
-				65DBCD8426B2D85000B79F6A /* Sources */,
-				65DBCD8526B2D85000B79F6A /* Frameworks */,
-				65DBCD8626B2D85000B79F6A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				65DBCD8A26B2D85000B79F6A /* PBXTargetDependency */,
-			);
-			name = SixThinkingHatsUITests;
-			productName = SixThinkingHatsUITests;
-			productReference = 65DBCD8826B2D85000B79F6A /* SixThinkingHatsUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -205,10 +158,6 @@
 						CreatedOnToolsVersion = 12.5.1;
 					};
 					65DBCD7C26B2D85000B79F6A = {
-						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = 65DBCD6B26B2D84E00B79F6A;
-					};
-					65DBCD8726B2D85000B79F6A = {
 						CreatedOnToolsVersion = 12.5.1;
 						TestTargetID = 65DBCD6B26B2D84E00B79F6A;
 					};
@@ -229,7 +178,6 @@
 			targets = (
 				65DBCD6B26B2D84E00B79F6A /* SixThinkingHats */,
 				65DBCD7C26B2D85000B79F6A /* SixThinkingHatsTests */,
-				65DBCD8726B2D85000B79F6A /* SixThinkingHatsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -245,13 +193,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		65DBCD7B26B2D85000B79F6A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65DBCD8626B2D85000B79F6A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -280,14 +221,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		65DBCD8426B2D85000B79F6A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				65DBCD8D26B2D85000B79F6A /* SixThinkingHatsUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -295,11 +228,6 @@
 			isa = PBXTargetDependency;
 			target = 65DBCD6B26B2D84E00B79F6A /* SixThinkingHats */;
 			targetProxy = 65DBCD7E26B2D85000B79F6A /* PBXContainerItemProxy */;
-		};
-		65DBCD8A26B2D85000B79F6A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 65DBCD6B26B2D84E00B79F6A /* SixThinkingHats */;
-			targetProxy = 65DBCD8926B2D85000B79F6A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -504,44 +432,6 @@
 			};
 			name = Release;
 		};
-		65DBCD9826B2D85000B79F6A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SixThinkingHatsUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.oyster.SixThinkingHatsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SixThinkingHats;
-			};
-			name = Debug;
-		};
-		65DBCD9926B2D85000B79F6A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SixThinkingHatsUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.oyster.SixThinkingHatsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SixThinkingHats;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -568,15 +458,6 @@
 			buildConfigurations = (
 				65DBCD9526B2D85000B79F6A /* Debug */,
 				65DBCD9626B2D85000B79F6A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		65DBCD9726B2D85000B79F6A /* Build configuration list for PBXNativeTarget "SixThinkingHatsUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				65DBCD9826B2D85000B79F6A /* Debug */,
-				65DBCD9926B2D85000B79F6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
