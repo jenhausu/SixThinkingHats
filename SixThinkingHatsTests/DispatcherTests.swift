@@ -26,13 +26,52 @@ class DispatcherTests: XCTestCase {
     }
     
     func testDispatcher_dispatch6User_success() {
+        dispatchTest(userCount: 6) { countArray in
+            XCTAssertEqual(countArray[0], 6)
+        }
+    }
+    
+    func testDispatcher_dispatch7User_success() {
+        dispatchTest(userCount: 7) { countArray in
+            XCTAssertEqual(countArray[0], 5)
+            XCTAssertEqual(countArray[1], 1)
+        }
+    }
+    
+    func testDispatcher_dispatch8User_success() {
+        dispatchTest(userCount: 8) { countArray in
+            XCTAssertEqual(countArray[0], 4)
+            XCTAssertEqual(countArray[1], 2)
+        }
+    }
+    
+    func testDispatcher_dispatch11User_success() {
+        dispatchTest(userCount: 11) { countArray in
+            XCTAssertEqual(countArray[0], 1)
+            XCTAssertEqual(countArray[1], 5)
+        }
+    }
+    
+    func testDispatcher_dispatch13User_success() {
+        dispatchTest(userCount: 13) { countArray in
+            XCTAssertEqual(countArray[0], 0)
+            XCTAssertEqual(countArray[1], 5)
+            XCTAssertEqual(countArray[2], 1)
+        }
+    }
+    
+    // MARK: - Helper
+    
+    func makeSUT() -> Dispatcher {
+        Dispatcher()
+    }
+    
+    func dispatchTest(userCount: Int, callback: ([Int]) -> Void) {
         let sut = makeSUT()
-        sut.addParticipant(name: "user1")
-        sut.addParticipant(name: "user2")
-        sut.addParticipant(name: "user3")
-        sut.addParticipant(name: "user4")
-        sut.addParticipant(name: "user5")
-        sut.addParticipant(name: "user6")
+        for index in 0..<userCount {
+            sut.addParticipant(name: "user\(index)")
+        }
+        
         sut.dispatch()
         
         var dispatchedHats: [Hat: Int] = [:]
@@ -45,18 +84,12 @@ class DispatcherTests: XCTestCase {
             }
         }
         
-        XCTAssertEqual(dispatchedHats[.white], 1)
-        XCTAssertEqual(dispatchedHats[.red], 1)
-        XCTAssertEqual(dispatchedHats[.black], 1)
-        XCTAssertEqual(dispatchedHats[.yellow], 1)
-        XCTAssertEqual(dispatchedHats[.green], 1)
-        XCTAssertEqual(dispatchedHats[.black], 1)
-    }
-    
-    // MARK: - Helper
-    
-    func makeSUT() -> Dispatcher {
-        Dispatcher()
+        var hatCount: [Int] = Array(repeating: 0, count: (userCount / 6) + 1)
+        for (_, value) in dispatchedHats {
+            hatCount[value - 1] += 1
+        }
+        
+        callback(hatCount)
     }
     
 }
