@@ -25,6 +25,12 @@ class DispatcherTests: XCTestCase {
         XCTAssertEqual(sut.participants.count, 0)
     }
     
+    func testDispatcher_dispatch5User_success() {
+        dispatchTest(userCount: 5) { countArray in
+            XCTAssertEqual(countArray[0], 5)
+        }
+    }
+    
     func testDispatcher_dispatch6User_success() {
         dispatchTest(userCount: 6) { countArray in
             XCTAssertEqual(countArray[0], 6)
