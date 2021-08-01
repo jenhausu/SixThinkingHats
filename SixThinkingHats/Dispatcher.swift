@@ -35,11 +35,38 @@ class Dispatcher {
     func dispatch() {
         var notDispatchedHats = makeNotDispatchedHats()
         
-        for user in participants {
-            let index = Int.random(in: 0...notDispatchedHats.count - 1)
-            let hat = notDispatchedHats[index]
+        for (index, user) in participants.enumerated() {
+            var hatIndex: Int
+            var hat: Hat
+            var dispatchCount = 0
+            
+            repeat {
+                hatIndex = Int.random(in: 0...notDispatchedHats.count - 1)
+                hat = notDispatchedHats[hatIndex]
+                dispatchCount += 1
+                
+                if checkIsAllRemainHatsCantDispatch(user: user, remainHats: notDispatchedHats) {
+                    clearThisDispatch(user: user, index: index)
+                    dispatch()
+                    return
+                }
+            } while user.hats.contains(hat)
+            
             user.hats.append(hat)
-            notDispatchedHats.remove(at: index)
+            notDispatchedHats.remove(at: hatIndex)
+        }
+    }
+    
+    func checkIsAllRemainHatsCantDispatch(user: Participant, remainHats: [Hat]) -> Bool {
+        let currentHatSet = Set(user.hats)
+        
+        return Set(remainHats).isSubset(of: currentHatSet)
+    }
+    
+    func clearThisDispatch(user: Participant, index: Int) {
+        for userIndex in 0..<index {
+            let user = participants[userIndex]
+            user.hats.removeLast()
         }
     }
     

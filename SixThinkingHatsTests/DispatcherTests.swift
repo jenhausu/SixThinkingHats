@@ -10,6 +10,8 @@ import XCTest
 
 class DispatcherTests: XCTestCase {
     
+    // MARK: - Participant
+    
     func testDispatcher_addParticipant_countOne() {
         let sut = makeSUT()
         sut.addParticipant(name: "new user")
@@ -24,6 +26,8 @@ class DispatcherTests: XCTestCase {
         
         XCTAssertEqual(sut.participants.count, 0)
     }
+    
+    // MARK: - Dispatch Once
     
     func testDispatcher_lessThan6_success() {
         dispatchTest(userCount: 5) { countArray in
@@ -76,6 +80,167 @@ class DispatcherTests: XCTestCase {
             XCTAssertEqual(countArray[0], 1)
             XCTAssertEqual(countArray[1], 5)
         }
+    }
+    
+    // MARK: - Dispatch more than once
+    
+    func test_dispatch_threeTimes_notDuplicate() {
+        let sut = makeSUT()
+        for index in 0..<6 {
+            sut.addParticipant(name: "user\(index)")
+        }
+        sut.dispatch()
+        sut.dispatch()
+        sut.dispatch()
+        
+        for user in sut.participants {
+            let setObject = Set(user.hats)
+            XCTAssertEqual(setObject.count, 3)
+        }
+    }
+    
+    func test_dispatch_fourTimes_notDuplicate() {
+        let sut = makeSUT()
+        for index in 0..<6 {
+            sut.addParticipant(name: "user\(index)")
+        }
+        sut.dispatch()
+        sut.dispatch()
+        sut.dispatch()
+        sut.dispatch()
+        
+        for user in sut.participants {
+            let setObject = Set(user.hats)
+            XCTAssertEqual(setObject.count, 4)
+        }
+    }
+    
+    func test_dispatch_fourTimes_performance() {
+        measure {
+            let sut = makeSUT()
+            for index in 0..<6 {
+                sut.addParticipant(name: "user\(index)")
+            }
+            sut.dispatch()
+            sut.dispatch()
+            sut.dispatch()
+            sut.dispatch()
+            
+            for user in sut.participants {
+                let setObject = Set(user.hats)
+                XCTAssertEqual(setObject.count, 4)
+            }
+        }
+    }
+    
+    func test_dispatch_fiveTimes_notDuplicate() {
+        let sut = makeSUT()
+        for index in 0..<6 {
+            sut.addParticipant(name: "user\(index)")
+        }
+        sut.dispatch()
+        sut.dispatch()
+        sut.dispatch()
+        sut.dispatch()
+        sut.dispatch()
+
+        for user in sut.participants {
+            let setObject = Set(user.hats)
+            XCTAssertEqual(setObject.count, 5)
+        }
+    }
+    
+    func test_dispatch_sixTimes_notDuplicate() {
+        let sut = makeSUT()
+        for index in 0..<6 {
+            sut.addParticipant(name: "user\(index)")
+        }
+        sut.dispatch()
+        sut.dispatch()
+        sut.dispatch()
+        sut.dispatch()
+        sut.dispatch()
+        sut.dispatch()
+        
+        for user in sut.participants {
+            let setObject = Set(user.hats)
+            XCTAssertEqual(setObject.count, 6)
+        }
+    }
+    
+    func test_dispatch_sevenPeople_threeTimes_notDuplicate() {
+        let sut = makeSUT()
+        for index in 0..<7 {
+            sut.addParticipant(name: "user\(index)")
+        }
+        sut.dispatch()
+        sut.dispatch()
+        sut.dispatch()
+        
+        for user in sut.participants {
+            let setObject = Set(user.hats)
+            XCTAssertEqual(setObject.count, 3)
+        }
+    }
+    
+    func test_dispatch_eightPeople_threeTimes_notDuplicate() {
+        let sut = makeSUT()
+        for index in 0..<8 {
+            sut.addParticipant(name: "user\(index)")
+        }
+        sut.dispatch()
+        sut.dispatch()
+        sut.dispatch()
+        sut.dispatch()
+        
+        for user in sut.participants {
+            let setObject = Set(user.hats)
+            XCTAssertEqual(setObject.count, 4)
+        }
+    }
+    
+    // MARK: - checkIsAllRemainHatsCantDispatch
+
+    func test_checkIsAllRemainHatsCantDispatch_contain_true() {
+        let sut = makeSUT()
+        let user = Participant(name: "userName")
+        user.hats.append(.white)
+        user.hats.append(.red)
+
+        let result = sut.checkIsAllRemainHatsCantDispatch(user: user,
+                                                          remainHats: [.red])
+        
+        XCTAssertEqual(result, true)
+    }
+    
+    func test_checkIsAllRemainHatsCantDispatch_partialContain_false() {
+        let sut = makeSUT()
+        let user = Participant(name: "userName")
+        user.hats.append(.white)
+        user.hats.append(.red)
+        
+        let result = sut.checkIsAllRemainHatsCantDispatch(user: user,
+                                                          remainHats: [.red, .blue])
+        
+        XCTAssertEqual(result, false)
+    }
+    
+    func test_checkIsAllRemainHatsCantDispatch_allNotContain_false() {
+        let sut = makeSUT()
+        let user = Participant(name: "userName")
+        user.hats.append(.white)
+        user.hats.append(.red)
+        
+        let result = sut.checkIsAllRemainHatsCantDispatch(user: user,
+                                                          remainHats: [.blue, .black])
+        
+        XCTAssertEqual(result, false)
+    }
+    
+    // MARK: - clearThisDispatch
+    
+    func test_clearThisDispatch() {
+        
     }
     
     // MARK: - Helper
