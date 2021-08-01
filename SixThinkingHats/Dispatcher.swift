@@ -33,17 +33,7 @@ class Dispatcher {
     }
     
     func dispatch() {
-        var notDispatchedHats: [Hat] = []
-        for _ in 0..<(participants.count / 6) {
-            notDispatchedHats += Hat.allCases
-        }
-        
-        var sixHats = Hat.allCases
-        for _ in 0..<(participants.count % 6) {
-            let index = Int.random(in: 0..<sixHats.count)
-            notDispatchedHats.append(sixHats[index])
-            sixHats.remove(at: index)
-        }
+        var notDispatchedHats = makeNotDispatchedHats()
         
         for user in participants {
             let index = Int.random(in: 0...notDispatchedHats.count - 1)
@@ -51,6 +41,22 @@ class Dispatcher {
             user.hats.append(hat)
             notDispatchedHats.remove(at: index)
         }
+    }
+    
+    private func makeNotDispatchedHats() -> [Hat] {
+        var hats: [Hat] = []
+        for _ in 0..<(participants.count / 6) {
+            hats += Hat.allCases
+        }
+        
+        var sixHats = Hat.allCases
+        for _ in 0..<(participants.count % 6) {
+            let index = Int.random(in: 0..<sixHats.count)
+            hats.append(sixHats[index])
+            sixHats.remove(at: index)
+        }
+        
+        return hats
     }
     
 }
