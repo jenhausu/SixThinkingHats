@@ -14,6 +14,7 @@
 		65DBCD8226B2D85000B79F6A /* DispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DBCD8126B2D85000B79F6A /* DispatcherTests.swift */; };
 		65DBCD9B26B2D85900B79F6A /* Hat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DBCD9A26B2D85900B79F6A /* Hat.swift */; };
 		65DBCD9D26B2D92E00B79F6A /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DBCD9C26B2D92E00B79F6A /* Dispatcher.swift */; };
+		65E0C22426B97036001C739B /* ParticipantRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E0C22326B97036001C739B /* ParticipantRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		65DBCD8326B2D85000B79F6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65DBCD9A26B2D85900B79F6A /* Hat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hat.swift; sourceTree = "<group>"; };
 		65DBCD9C26B2D92E00B79F6A /* Dispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
+		65E0C22326B97036001C739B /* ParticipantRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				65DBCD6F26B2D84E00B79F6A /* SixThinkingHatsApp.swift */,
 				65DBCD7126B2D84E00B79F6A /* ContentView.swift */,
+				65E0C22326B97036001C739B /* ParticipantRow.swift */,
 				65DBCD9A26B2D85900B79F6A /* Hat.swift */,
 				65DBCD9C26B2D92E00B79F6A /* Dispatcher.swift */,
 				65DBCD7326B2D85000B79F6A /* Assets.xcassets */,
@@ -209,6 +212,7 @@
 				65DBCD7226B2D84E00B79F6A /* ContentView.swift in Sources */,
 				65DBCD7026B2D84E00B79F6A /* SixThinkingHatsApp.swift in Sources */,
 				65DBCD9D26B2D92E00B79F6A /* Dispatcher.swift in Sources */,
+				65E0C22426B97036001C739B /* ParticipantRow.swift in Sources */,
 				65DBCD9B26B2D85900B79F6A /* Hat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
