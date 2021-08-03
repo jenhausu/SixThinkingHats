@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct SixThinkingHatsApp: App {
+    
+    @StateObject var model = Dispatcher()
+        
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(model: model)
         }
     }
 }

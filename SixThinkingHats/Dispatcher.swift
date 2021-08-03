@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
-class Participant: Identifiable {
-    let name: String
-    var hats: [Hat] = []
+class Participant: ObservableObject, Identifiable {
+    var name: String
+    @Published var hats: [Hat] = []
     
     var currentHat: Hat? {
         hats.last
@@ -20,9 +21,9 @@ class Participant: Identifiable {
     }
 }
 
-class Dispatcher {
+class Dispatcher: ObservableObject {
     
-    var participants: [Participant] = []
+    @Published var participants: [Participant] = []
     
     func addParticipant(name: String) {
         participants.append(Participant(name: name))

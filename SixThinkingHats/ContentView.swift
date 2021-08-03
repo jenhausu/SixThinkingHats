@@ -9,24 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var participants: [Participant] = []
+    @ObservedObject var model: Dispatcher
     
     var body: some View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(participants) { participant in
-                        ParticipantRow(userName: participant.name,
-                                       hat: participant.hats.last)
+                    ForEach(model.participants) { participant in
+                        ParticipantRow(user: participant)
                     }
                 }
                 Button("分配") {
-                    
+                    model.dispatch()
                 }
                 .padding()
                 Divider()
                 Button("新討論") {
-                    
+                    model.restart()
                 }
                 .padding()
                 Divider()
@@ -43,12 +42,12 @@ struct ContentView: View {
     }
     
     func add() {
-        participants.append(Participant(name: ""))
+        model.addParticipant(name: "")
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(model: Dispatcher())
     }
 }

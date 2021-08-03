@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct ParticipantRow: View {
-    @State var userName: String
-    @State var hat: Hat?
+    
+    @ObservedObject var user: Participant
     
     var body: some View {
         HStack {
-            TextField("請輸入參加者姓名", text: $userName)
+            TextField("請輸入參加者姓名", text: $user.name)
                 .textFieldStyle(.roundedBorder)
                 .frame(width: 200)
-            if let hat = hat {
+            if let hat = user.hats.last {
                 Text("\(displayHat(hat))帽子")
             }
         }.padding()
@@ -44,9 +44,8 @@ struct ParticipantRow: View {
 struct ParticipantRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ParticipantRow(userName: "")
-            ParticipantRow(userName: "參加者姓名")
-            ParticipantRow(userName: "參加者姓名", hat: .white)
+            ParticipantRow(user: Participant(name: ""))
+            ParticipantRow(user: Participant(name: "參加者姓名"))
         }
     }
 }
