@@ -13,9 +13,9 @@ struct ParticipantRow: View {
     
     var body: some View {
         HStack {
-            TextField("title", text: $userName)
+            TextField("請輸入參加者姓名", text: $userName)
                 .textFieldStyle(.roundedBorder)
-                .frame(width: 150)
+                .frame(width: 200)
             if let hat = hat {
                 Text("\(displayHat(hat))帽子")
             }
@@ -44,6 +44,7 @@ struct ParticipantRow: View {
 struct ParticipantRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
+            ParticipantRow(userName: "")
             ParticipantRow(userName: "參加者姓名")
             ParticipantRow(userName: "參加者姓名", hat: .white)
         }
