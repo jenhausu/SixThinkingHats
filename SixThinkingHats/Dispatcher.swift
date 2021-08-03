@@ -57,6 +57,12 @@ class Dispatcher {
         }
     }
     
+    func restart() {
+        for user in participants {
+            user.hats = []
+        }
+    }
+    
     func checkIsAllRemainHatsCantDispatch(user: Participant, remainHats: [Hat]) -> Bool {
         let currentHatSet = Set(user.hats)
         
