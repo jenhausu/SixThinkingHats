@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Participant {
+class Participant: Identifiable {
     let name: String
     var hats: [Hat] = []
     
