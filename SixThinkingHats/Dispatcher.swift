@@ -37,6 +37,8 @@ class Dispatcher: ObservableObject {
         var notDispatchedHats = makeNotDispatchedHats()
         
         for (index, user) in participants.enumerated() {
+            guard user.hats.count != 6 else { continue }
+            
             var hatIndex: Int
             var hat: Hat
             var dispatchCount = 0

@@ -199,6 +199,25 @@ class DispatcherTests: XCTestCase {
         }
     }
     
+    func test_dispatch_moreThanSixTime() {
+        let sut = makeSUT()
+        for index in 0..<6 {
+            sut.addParticipant(name: "user\(index)")
+        }
+        sut.dispatch()
+        sut.dispatch()
+        sut.dispatch()
+        sut.dispatch()
+        sut.dispatch()
+        sut.dispatch()
+        sut.dispatch()
+        
+        for user in sut.participants {
+            let setObject = Set(user.hats)
+            XCTAssertEqual(setObject.count, 6)
+        }
+    }
+    
     // MARK: - checkIsAllRemainHatsCantDispatch
 
     func test_checkIsAllRemainHatsCantDispatch_contain_true() {
