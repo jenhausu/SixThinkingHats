@@ -16,8 +16,9 @@ class Participant: ObservableObject, Identifiable {
         hats.last
     }
     
-    init(name: String) {
+    init(name: String, hats: [Hat] = []) {
         self.name = name
+        self.hats = hats
     }
 }
 

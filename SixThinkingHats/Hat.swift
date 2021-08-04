@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Hat: Int, CaseIterable {
+enum Hat: String, CaseIterable {
     case white
     case red
     case black

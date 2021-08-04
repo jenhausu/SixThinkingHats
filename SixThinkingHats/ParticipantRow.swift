@@ -17,12 +17,20 @@ struct ParticipantRow: View {
                 .textFieldStyle(.roundedBorder)
                 .frame(width: 200)
             if let hat = user.hats.last {
-                Text("\(displayHat(hat))帽子")
+                HStack {
+                    displayHatColor(hat)
+                        .frame(width: 20, height: 20)
+                        .background(displayHatColor(hat))
+                        .border(.gray, width: 1)
+                    Text("\(displayHatName(hat))帽子")
+                        .foregroundColor(displayHatColor(hat))
+                }
             }
-        }.padding()
+        }
+        .padding()
     }
     
-    func displayHat(_ hat: Hat) -> String {
+    func displayHatName(_ hat: Hat) -> String {
         switch hat {
         case .white:
             return "白"
@@ -39,13 +47,21 @@ struct ParticipantRow: View {
         }
     }
     
+    func displayHatColor(_ hat: Hat) -> Color {
+        Color(hat.rawValue)
+    }
+    
 }
 
 struct ParticipantRow_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            ParticipantRow(user: Participant(name: ""))
-            ParticipantRow(user: Participant(name: "參加者姓名"))
+        List {
+            ParticipantRow(user: Participant(name: "", hats: [.white]))
+            ParticipantRow(user: Participant(name: "", hats: [.yellow]))
+            ParticipantRow(user: Participant(name: "", hats: [.red]))
+            ParticipantRow(user: Participant(name: "", hats: [.blue]))
+            ParticipantRow(user: Participant(name: "", hats: [.black]))
+            ParticipantRow(user: Participant(name: "", hats: [.green]))
         }
     }
 }
