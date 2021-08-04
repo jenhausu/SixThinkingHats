@@ -56,12 +56,9 @@ struct ParticipantRow: View {
 struct ParticipantRow_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            ParticipantRow(user: Participant(name: "", hats: [.white]))
-            ParticipantRow(user: Participant(name: "", hats: [.yellow]))
-            ParticipantRow(user: Participant(name: "", hats: [.red]))
-            ParticipantRow(user: Participant(name: "", hats: [.blue]))
-            ParticipantRow(user: Participant(name: "", hats: [.black]))
-            ParticipantRow(user: Participant(name: "", hats: [.green]))
+            ForEach(Hat.allCases, id: \.rawValue) { hat in
+                ParticipantRow(user: Participant(name: "", hats: [hat]))
+            }
         }
     }
 }
