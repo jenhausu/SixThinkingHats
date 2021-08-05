@@ -18,6 +18,7 @@ struct ContentView: View {
                     ForEach(model.participants) { participant in
                         ParticipantRow(user: participant)
                     }
+                    .onDelete(perform: delete)
                 }
                 Button("分配") {
                     model.dispatch()
@@ -44,6 +45,11 @@ struct ContentView: View {
     func add() {
         model.addParticipant(name: "")
     }
+    
+    func delete(at offsets: IndexSet) {
+        model.participants.remove(atOffsets: offsets)
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
